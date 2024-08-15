@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.message-box {
+  border-radius: 12px;
+  padding: 12px;
+  max-width: 80%;
+  margin: 5px;
+}
+
+.user-message {
+  background-color: #1f1f1f;
+  align-self: flex-start;
+}
+
+.assistant-message {
+  background-color: #333;
+  align-self: flex-end;
+}
+
+.typing-indicator {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, transparent, transparent 50%, #ffffff 50%, #ffffff);
+  background-size: 200% 200%;
+  animation: typing 1.5s infinite;
+}
+
+@keyframes typing {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 100%; }
+}
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
